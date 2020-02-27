@@ -115,7 +115,7 @@
 
 (defn op-request-map
   [client op-map]
-  (if-let [op-descriptor (get-in client [:compute.gcp.api/api-descriptor :compute.api-descriptor/op->spec (:op op-map)])]
+  (if-let [op-descriptor (get-in client [:compute.gcp.api/api-descriptor :compute.api-descriptor/op->spec])]
     (let [request (try
                     (build-request-map
                       (get-in client [:compute.gcp.api/api-descriptor :compute.api-descriptor/endpoint])
